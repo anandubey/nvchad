@@ -14,4 +14,35 @@ M.base46 = {
     -- },
 }
 
+M.nvdash = {
+    load_on_startup = true,
+}
+
+M.ui = {
+    cmp = {
+        icons_left = true, -- only for non-atom styles!
+        style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+        format_colors = {
+            tailwind = false, -- will work for css lsp too
+            icon = "󱓻",
+        },
+    },
+    telescope = { style = "bordered" },
+    statusline = {
+        enabled = true,
+        theme = "minimal", -- default/vscode/vscode_colored/minimal
+        -- default/round/block/arrow separators work only for default statusline theme
+        -- round and block will work for minimal theme only
+        separator_style = "round",
+        order = nil,
+        modules = nil,
+    },
+}
+
+M.mason = {
+    pkgs = {
+        "black",
+    },
+}
+
 return M

@@ -16,5 +16,6 @@ vim.cmd "autocmd BufEnter * setlocal formatoptions-=cro"
 opt.wrap = true
 opt.linebreak = true
 opt.cmdheight = 0
+opt.mouse = "a"
 
 opt.joinspaces = false
