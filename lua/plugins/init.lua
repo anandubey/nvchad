@@ -1,7 +1,7 @@
 return {
     {
         "stevearc/conform.nvim",
-        event = "BufWritePre", -- uncomment for format on save
+        event = "BufWritePre",
         opts = require "configs.conform",
     },
 
@@ -29,14 +29,13 @@ return {
         "mrcjkb/rustaceanvim",
         version = "^5",
         lazy = false,
+        opts = require "configs.rusty",
     },
     {
         "saecki/crates.nvim",
         ft = { "toml" },
-        config = function(_, opts)
-            local crates = require "crates"
-            crates.setup(opts)
-            crates.show()
+        config = function()
+            require "configs.crates"
         end,
     },
     {

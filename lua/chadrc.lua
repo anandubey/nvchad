@@ -39,9 +39,12 @@ M.ui = {
     },
 }
 
+M.lsp = { signature = false }
+
 M.mason = {
     pkgs = {
         "black",
+        "bash-language-server",
     },
 }
 
