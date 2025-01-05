@@ -1,7 +1,7 @@
 return {
     {
         "stevearc/conform.nvim",
-        event = "BufWritePre",
+        event = "BufWritePre", -- uncomment for format on save
         opts = require "configs.conform",
     },
 
@@ -29,7 +29,30 @@ return {
         "mrcjkb/rustaceanvim",
         version = "^5",
         lazy = false,
-        opts = require "configs.rusty",
+        init = function()
+            vim.g.rustaceanvim = {
+                tools = {
+                    code_actions = {
+                        ui_select_fallback = false,
+                    },
+                    float_win_config = {
+                        auto_focus = true,
+                        open_split = "horizontal",
+                    },
+                },
+                server = {
+                    default_settings = {
+                        ["rust-analyzer"] = {
+                            hover = {
+                                show = {
+                                    structFields = 40,
+                                },
+                            },
+                        },
+                    },
+                },
+            }
+        end,
     },
     {
         "saecki/crates.nvim",
