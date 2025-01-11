@@ -30,7 +30,7 @@ end, opts "Code action")
 
 map("n", "K", show_documentation, opts "Hover and code actions")
 
-map("n", "<leader>ch", function()
+map("n", "<leader>ih", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { 0 })
 end)
 

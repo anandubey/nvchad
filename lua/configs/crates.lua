@@ -18,8 +18,8 @@ require("crates").setup {
     },
 }
 local crates = require "crates"
-local opts = { silent = true }
 
-vim.keymap.set("n", "<leader>ccv", crates.show_versions_popup, opts)
-vim.keymap.set("n", "<leader>ccf", crates.show_features_popup, opts)
-vim.keymap.set("n", "<leader>ccd", crates.show_dependencies_popup, opts)
+local map = vim.keymap.set
+map("n", "<leader>ccv", crates.show_versions_popup, { desc = "Crates show version picker" })
+map("n", "<leader>ccf", crates.show_features_popup, { desc = "Crates show features picker" })
+map("n", "<leader>ccd", crates.show_dependencies_popup, { desc = "Crates show dependency list" })
